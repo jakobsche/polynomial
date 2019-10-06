@@ -8,4 +8,13 @@ The library and examples are in system related subdirectories. The file name of 
 
 ### Free Pascal
 
-To use the exported functions of the library, use the Unit importpolynomial.pas. It is written in Object Pascal Mode. For other modes you will perhaps have to adapt the syntax.
+To use the exported functions of the library, use the Unit importpolynomial.pas! It is written for Object Pascal mode. For other modes you will perhaps have to adapt the syntax. 
+How the function variables are used to call exported functions of the library is shown in pntest/unit1.pas. 
+
+### Delphi
+
+Fix the syntax in a copy of the Unit importpolynomial.pas! This might require, that you use a "_" at the beginning of function names you import, especially on macOS. You can send me your modification to publish it here, if you want to help other Delphi. users.
+
+Perhaps you have to use another unit than DynLibs in Delphi.
+The constant LibFileName might require an adaptation to your environment.
+The functions LoadLibrary, UnloadLibrary, and GetProcAddress might have other names in Delphi.
