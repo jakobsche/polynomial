@@ -15,11 +15,17 @@ function CreatePolynomial: TPolynomial; cdecl;
 returns a handle to a newly created polynomial. The returned type is an unsigned 32 bit integer or a pointer.
 This is the first parameter of every following function to identify the polynomial it works on.
 
+### CreateCopy
+
+function CreateCopy(P: TPolynomial): TPolynomial; cdecl;
+
+returns a newly created copy of P
+
 ### DestroyPolynomial
 
 procedure DestroyPolynomial(var P: TPolynomial); cdecl;
 
-frees the memory of the given polynomial. It has to be called for polynomials being created with the function CreatePolynomial only.
+frees the memory of P. It has to be called for polynomials being created with the function *CreatePolynomial* or *CreateCopy* only. Call it, before your program is terminated.
 After that the handle P is invalid. 
 
 ### GetDegree
