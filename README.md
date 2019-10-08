@@ -62,11 +62,13 @@ returns a polynomial that is the n-th derivation of P.
 
 function GetTangent(P: TPolynomial; x0:Double): TPolynomial; cdecl;
 
-returns a polynomial describing the tangent of P at position x0.
+returns a polynomial describing the tangent touching P at position x0.
 
 ### GetSecant
 
-returns a polynomial describing the secant of the given polynomial through 2 points.
+function GetSecant(P: TPolynomial; a, b: Double): TPolynomial; cdecl;
+
+returns a polynomial describing the secant of P through 2 points (arguments a and b).
 
 ## Shared library usage
 
