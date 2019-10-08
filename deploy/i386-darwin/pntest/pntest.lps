@@ -20,8 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <TopLine Value="59"/>
-        <CursorPos X="41" Y="75"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="39"/>
+        <CursorPos X="52" Y="57"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -31,8 +32,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ImportPolynomial"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="47"/>
-        <CursorPos X="47" Y="55"/>
+        <TopLine Value="46"/>
+        <CursorPos X="49" Y="57"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -48,19 +49,18 @@
         <Filename Value="../functions.pas"/>
         <UnitName Value="Functions"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="30"/>
-        <CursorPos X="28" Y="42"/>
+        <TopLine Value="2"/>
+        <CursorPos X="58" Y="16"/>
         <UsageCount Value="102"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="../../packages/realfunc/polynomials.pas"/>
         <UnitName Value="Polynomials"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="177"/>
-        <CursorPos X="36" Y="180"/>
-        <UsageCount Value="91"/>
+        <TopLine Value="23"/>
+        <CursorPos X="39" Y="191"/>
+        <UsageCount Value="94"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -68,14 +68,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="189"/>
         <CursorPos X="21" Y="203"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="40"/>
       </Unit6>
       <Unit7>
         <Filename Value="/usr/local/share/fpcsrc/rtl/inc/objpas.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="283"/>
         <CursorPos X="12" Y="286"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="40"/>
       </Unit7>
       <Unit8>
         <Filename Value="/Developer/lazarus/lcl/forms.pp"/>
@@ -83,14 +83,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="58"/>
         <CursorPos X="3" Y="70"/>
-        <UsageCount Value="59"/>
+        <UsageCount Value="58"/>
       </Unit8>
       <Unit9>
         <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/sysutils/sysutilh.inc"/>
         <EditorIndex Value="4"/>
         <TopLine Value="308"/>
         <CursorPos X="18" Y="320"/>
-        <UsageCount Value="52"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -98,7 +98,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="154"/>
         <CursorPos X="9" Y="158"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit10>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">

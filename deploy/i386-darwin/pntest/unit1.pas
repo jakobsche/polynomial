@@ -54,6 +54,7 @@ begin
   with Memo1.Lines do begin
     Clear;
     Add(Format('CreatePolynomial   %p', [CreatePolynomial]));
+    Add(Format('CreateCopy         %p', [CreateCopy]));
     Add(Format('DestroyPolynomial  %p', [DestroyPolynomial]));
     Add(Format('GetDegree          %p', [GetDegree]));
     Add(Format('SetDegree          %p', [SetDegree]));
