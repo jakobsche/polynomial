@@ -10,41 +10,59 @@ Therefore, a reference guide about the exported functions of the library polynom
 
 ### CreatePolynomial
 
-returns a handle to a newly created polynomial.
+function CreatePolynomial: TPolynomial; cdecl;
+
+returns a handle to a newly created polynomial. The returned type is an unsigned 32 bit integer or a pointer.
 This is the first parameter of every following function to identify the polynomial it works on.
 
 ### DestroyPolynomial
 
+procedure DestroyPolynomial(var P: TPolynomial); cdecl;
+
 frees the memory of the given polynomial. It has to be called for polynomials being created with the function CreatePolynomial only.
-After that the handle being initialized with CreatePolynomial is invalid. 
+After that the handle P is invalid. 
 
 ### GetDegree
+
+function GetDegree(P: TPolynomial): Integer; cdecl;
 
 returns the degree of the polynomial.
 
 ### SetDegree
 
-sets the degree of the polynomial.
+procedure SetDegree(P: TPolynomial; AValue: Integer; cdecl;
+
+sets the degree of P to AValue.
 
 ### GetCoefficient
 
-returns the coefficient at the given position of the polynomial.
+function GetCoefficient(P: TPolynomial; AnIndex: Integer): Double; cdecl;
+
+returns the coefficient at the given index position of the polynomial.
 
 ### SetCoefficient
 
-sets the coefficient at the given position of the polynomial.
+procedure SetCoefficient(P:TPolynomial; AnIndex:Integer; AValue: Double); cdecl;
+
+sets the coefficient at the given index position of the polynomial.
 
 ### GetPolynomialValue
 
-returns the value of the given polynomial for the given argument.
+function GetPolynomialValue(P: TPolynomial; x: Double): Double; cdecl;
+
+returns the value of P for the given argument.
 
 ### GetDerivation
 
-returns a polynomial that is the n-th derivation of the given polynomial.
+function GetDerivation(P: TPolynomial; n: Integer): TPolynomial; cdecl;
+
+returns a polynomial that is the n-th derivation of P.
 
 ### GetTangent
 
-returns a polynomial describing the tangent of the given polynomial at the given position.
+function GetTangent(P: TPolynomial; x0:Double): TPolynomial; cdecl;
+
+returns a polynomial describing the tangent of P at position x0.
 
 ### GetSecant
 
