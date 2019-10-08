@@ -48,11 +48,11 @@ returns a polynomial describing the tangent of the given polynomial at the given
 
 ### GetSecant
 
-returns a polynomial describing the recant of the given polynomial through 2 points.
+returns a polynomial describing the secant of the given polynomial through 2 points.
 
 ## Shared library usage
 
-The library and examples are in system related subdirectories. The file name of the shared library is *polynomial.* Example: For macOS (subdirectory deploy/i386-darwin) it is libpolynomial.dylib.
+The library and examples are in system related subdirectories. The file name of the shared library is \*polynomial.\* Example: For macOS (subdirectory deploy/i386-darwin) it is libpolynomial.dylib.
 
 ### Free Pascal
 
