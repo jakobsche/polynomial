@@ -30,7 +30,7 @@ returns the degree of the polynomial.
 
 ### SetDegree
 
-procedure SetDegree(P: TPolynomial; AValue: Integer; cdecl;
+procedure SetDegree(P: TPolynomial; AValue: Integer); cdecl;
 
 sets the degree of P to AValue.
 
