@@ -103,7 +103,7 @@ Include importpolynomial.h in your code!
 
 Some IDE might have tools to explore and link to shared libraries and what they export / provide. You should find information about that in the developer documentation of your compiler or IDE. Alternatively, you could search for separate programs providing this functionality. If you are not successfuly, you have to translate the unit importpolynomial.pas into the language you use. This includes to translate (replace) the following declarations and functions:
 
-- type TPolynomial:              can be declared as untyped pointer or as unsigned 32 bit integer
+- type TPolynomial:              can be declared as untyped pointer or as integer of equal size
 - function LoadLibrary:          get the handle of the library
 - function UnloadLibrary:        release the library in the end of its usage
 - function GetProcedureAddress:  get the address of the function with the given name
