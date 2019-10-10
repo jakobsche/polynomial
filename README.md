@@ -6,7 +6,9 @@ This is an example, how a shared library, being written, compiled and linked wit
 
 The use of a shared library is to use the exported functions with the advantage, that they are shared. That means, they have to be stored in a system only one time and can be used by many applications at runtime.
 To see, whether a library is usefully, you have to find out, what functions it exports and whether you need them.
-Therefore, a reference guide about the exported functions of the library polynomial follows
+Therefore, a reference guide about the exported functions of the library polynomial follows.
+
+On macOS you have to add a leading "_" to the function names (except if you use FPC). 
 
 ### CreatePolynomial
 
@@ -92,6 +94,10 @@ Fix the syntax in your copy of the Unit importpolynomial.pas! This might require
 Perhaps you have to use another unit than DynLibs in Delphi.
 The constant LibFileName might require an adaptation to your environment.
 The functions LoadLibrary, UnloadLibrary, and GetProcAddress might have other names in Delphi.
+
+### C / C++
+
+Include importpolynomial.h in your code!
 
 ### Other languages and development tools
 
