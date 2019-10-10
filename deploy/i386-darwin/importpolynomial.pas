@@ -6,6 +6,7 @@ interface
 
 type
   TPolynomial       = Pointer;
+  TCopyFunc         = function (P: TPolynomial): TPolynomial;
   TConstructor      = function: TPolynomial; cdecl;
   TDestructor       = procedure (var P: TPolynomial); cdecl;
   TGetIntegerFunc   = function (P: TPolynomial): Integer; cdecl;
@@ -19,6 +20,7 @@ type
 
 var
   CreatePolynomial: TConstructor;
+  CreateCopy: TCopyFunc;
   DestroyPolynomial: TDestructor;
   GetDegree: TGetIntegerFunc;
   SetDegree: TSetIntegerProc;
@@ -35,7 +37,11 @@ implementation
 uses DynLibs, SysUtils;
 
 const
+{$ifdef macos}
   LibFileName = '/Users/andreas/.lib/libpolynomial.dylib';
+{$else}
+  LibFileName = '/usr/local/lib/libpolynomial.so';
+{$endif}
 
 procedure LinkProc(Lib: TLibHandle; AFuncName: string; var AFuncVar);
 begin
@@ -52,6 +58,7 @@ initialization
 LibHandle := LoadLibrary(LibFileName);
 if LibHandle <> NilHandle then begin
   LinkProc(LibHandle, 'CreatePolynomial', CreatePolynomial);
+  LinkProc(LibHandle, 'CreateCopy', CreateCopy);
   LinkProc(LibHandle, 'DestroyPolynomial', DestroyPolynomial);
   LinkProc(LibHandle, 'GetDegree', GetDegree);
   LinkProc(LibHandle, 'SetDegree', SetDegree);
@@ -69,7 +76,7 @@ finalization
 
 LibLoaded := False;
 if not UnloadLibrary(LibHandle) then
-  raise Exception.CreateFmt('Unloading of "%s" is not possible', [LibFileName]);
+  raise Exception.CreateFmt('Unloading of "%s" is not possibly', [LibFileName]);
 
 end.
 
