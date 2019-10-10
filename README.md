@@ -14,6 +14,8 @@ On macOS you have to add a leading "_" to the function names (except if you use 
 
 function CreatePolynomial: TPolynomial; cdecl;
 
+TPolynomial CreatePolynomial();
+
 returns a handle to a newly created polynomial. The returned type is an unsigned 32 bit integer or a pointer.
 This is the first parameter of every following function to identify the polynomial it works on.
 
@@ -21,11 +23,15 @@ This is the first parameter of every following function to identify the polynomi
 
 function CreateCopy(P: TPolynomial): TPolynomial; cdecl;
 
+TPolynomial CreateCopy(TPolynomial P);
+
 returns a newly created copy of P
 
 ### DestroyPolynomial
 
 procedure DestroyPolynomial(var P: TPolynomial); cdecl;
+
+void DestroyPolynomial(TPolynomial P);
 
 frees the memory of P. It has to be called for polynomials being created with the function *CreatePolynomial* or *CreateCopy* only. Call it, before your program is terminated.
 After that the handle P is invalid. 
@@ -34,11 +40,15 @@ After that the handle P is invalid.
 
 function GetDegree(P: TPolynomial): Integer; cdecl;
 
+int GetDegree(TPolynomial P);
+
 returns the degree of the polynomial.
 
 ### SetDegree
 
 procedure SetDegree(P: TPolynomial; AValue: Integer); cdecl;
+
+void SetDegree(TPolynomial P; int AValue);
 
 sets the degree of P to AValue.
 
@@ -46,11 +56,15 @@ sets the degree of P to AValue.
 
 function GetCoefficient(P: TPolynomial; AnIndex: Integer): Double; cdecl;
 
+double GetCoefficient(TPolynomial P; int AnIndex);
+
 returns the coefficient at the given index position of the polynomial.
 
 ### SetCoefficient
 
 procedure SetCoefficient(P:TPolynomial; AnIndex:Integer; AValue: Double); cdecl;
+
+void SetCoefficient(TPolynomial P; int AnIndex; double AValue);
 
 sets the coefficient at the given index position of the polynomial.
 
@@ -58,11 +72,15 @@ sets the coefficient at the given index position of the polynomial.
 
 function GetPolynomialValue(P: TPolynomial; x: Double): Double; cdecl;
 
+double GetPolynomialValue(TPolynomial P; double x);
+
 returns the value of P for the given argument.
 
 ### GetDerivation
 
 function GetDerivation(P: TPolynomial; n: Integer): TPolynomial; cdecl;
+
+TPolynomial GetDerivation(TPolynomial P; int n);
 
 returns a polynomial that is the n-th derivation of P.
 
@@ -70,11 +88,15 @@ returns a polynomial that is the n-th derivation of P.
 
 function GetTangent(P: TPolynomial; x0:Double): TPolynomial; cdecl;
 
+TPolynomial GetTangent(TPolynomial P; double x0);
+
 returns a polynomial describing the tangent touching P at position x0.
 
 ### GetSecant
 
 function GetSecant(P: TPolynomial; a, b: Double): TPolynomial; cdecl;
+
+TPolynomial GetSecant(TPolynomial P; double a, b);
 
 returns a polynomial describing the secant of P through 2 points (arguments a and b).
 
