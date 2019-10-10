@@ -9,3 +9,8 @@ polynomial.lps
 polynomial.res
 .DS_Store
 */.DS_Store
+.svn
+c-example
+importpolynomial.h
+*.bak
+.directory
