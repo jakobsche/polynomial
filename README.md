@@ -31,7 +31,7 @@ returns a newly created copy of P
 
 procedure DestroyPolynomial(var P: TPolynomial); cdecl;
 
-void DestroyPolynomial(TPolynomial P);
+void DestroyPolynomial(TPolynomial *P);
 
 frees the memory of P. It has to be called for polynomials being created with the function *CreatePolynomial* or *CreateCopy* only. Call it, before your program is terminated.
 After that the handle P is invalid. 
