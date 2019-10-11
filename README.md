@@ -12,7 +12,7 @@ On macOS you have to add a leading "_" to the function names (except if you use 
 
 ### CreatePolynomial
 
-| Language | declaration 
+| Language | Declaration 
 | -------- | -----------
 | FPC      | function CreatePolynomial: TPolynomial; cdecl;
 | C        | TPolynomial CreatePolynomial();
@@ -22,82 +22,92 @@ This is the first parameter of every following function to identify the polynomi
 
 ### CreateCopy
 
-function CreateCopy(P: TPolynomial): TPolynomial; cdecl;
-
-TPolynomial CreateCopy(TPolynomial P);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function CreateCopy(P: TPolynomial): TPolynomial; cdecl;
+| C        | TPolynomial CreateCopy(TPolynomial P);
 
 returns a newly created copy of P
 
 ### DestroyPolynomial
 
-procedure DestroyPolynomial(var P: TPolynomial); cdecl;
-
-void DestroyPolynomial(TPolynomial *P);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | procedure DestroyPolynomial(var P: TPolynomial); cdecl;
+| C        | void DestroyPolynomial(TPolynomial *P);
 
 frees the memory of P. It has to be called for polynomials being created with the function *CreatePolynomial* or *CreateCopy* only. Call it, before your program is terminated.
 After that the handle P is invalid. 
 
 ### GetDegree
 
-function GetDegree(P: TPolynomial): Integer; cdecl;
-
-int GetDegree(TPolynomial P);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function GetDegree(P: TPolynomial): Integer; cdecl;
+| C        | int GetDegree(TPolynomial P);
 
 returns the degree of the polynomial.
 
 ### SetDegree
 
-procedure SetDegree(P: TPolynomial; AValue: Integer); cdecl;
-
-void SetDegree(TPolynomial P; int AValue);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | procedure SetDegree(P: TPolynomial; AValue: Integer); cdecl;
+| C        | void SetDegree(TPolynomial P; int AValue);
 
 sets the degree of P to AValue.
 
 ### GetCoefficient
 
-function GetCoefficient(P: TPolynomial; AnIndex: Integer): Double; cdecl;
-
-double GetCoefficient(TPolynomial P; int AnIndex);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function GetCoefficient(P: TPolynomial; AnIndex: Integer): Double; cdecl;
+| C        | double GetCoefficient(TPolynomial P; int AnIndex);
 
 returns the coefficient at the given index position of the polynomial.
 
 ### SetCoefficient
 
-procedure SetCoefficient(P:TPolynomial; AnIndex:Integer; AValue: Double); cdecl;
-
-void SetCoefficient(TPolynomial P; int AnIndex; double AValue);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | procedure SetCoefficient(P:TPolynomial; AnIndex:Integer; AValue: Double); cdecl;
+| C        | void SetCoefficient(TPolynomial P; int AnIndex; double AValue);
 
 sets the coefficient at the given index position of the polynomial.
 
 ### GetPolynomialValue
 
-function GetPolynomialValue(P: TPolynomial; x: Double): Double; cdecl;
-
-double GetPolynomialValue(TPolynomial P; double x);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function GetPolynomialValue(P: TPolynomial; x: Double): Double; cdecl;
+| C        | double GetPolynomialValue(TPolynomial P; double x);
 
 returns the value of P for the given argument.
 
 ### GetDerivation
 
-function GetDerivation(P: TPolynomial; n: Integer): TPolynomial; cdecl;
-
-TPolynomial GetDerivation(TPolynomial P; int n);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function GetDerivation(P: TPolynomial; n: Integer): TPolynomial; cdecl;
+| C        | TPolynomial GetDerivation(TPolynomial P; int n);
 
 returns a polynomial that is the n-th derivation of P.
 
 ### GetTangent
 
-function GetTangent(P: TPolynomial; x0:Double): TPolynomial; cdecl;
-
-TPolynomial GetTangent(TPolynomial P; double x0);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function GetTangent(P: TPolynomial; x0:Double): TPolynomial; cdecl;
+| C        | TPolynomial GetTangent(TPolynomial P; double x0);
 
 returns a polynomial describing the tangent touching P at position x0.
 
 ### GetSecant
 
-function GetSecant(P: TPolynomial; a, b: Double): TPolynomial; cdecl;
-
-TPolynomial GetSecant(TPolynomial P; double a, b);
+| Language | Declaration 
+| -------- | -----------
+| FPC      | function GetSecant(P: TPolynomial; a, b: Double): TPolynomial; cdecl;
+| C        | TPolynomial GetSecant(TPolynomial P; double a, b);
 
 returns a polynomial describing the secant of P through 2 points (arguments a and b).
 
