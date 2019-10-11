@@ -12,9 +12,10 @@ On macOS you have to add a leading "_" to the function names (except if you use 
 
 ### CreatePolynomial
 
-| FPC | function CreatePolynomial: TPolynomial; cdecl;
-
-| C   | TPolynomial CreatePolynomial();
+| Language | declaration 
+| -------- | -----------
+| FPC      | function CreatePolynomial: TPolynomial; cdecl;
+| C        | TPolynomial CreatePolynomial();
 
 returns a handle to a newly created polynomial. The returned type is an unsigned 32 bit integer or a pointer.
 This is the first parameter of every following function to identify the polynomial it works on.
