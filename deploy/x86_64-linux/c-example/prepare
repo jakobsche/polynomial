@@ -1,0 +1,5 @@
+#/bin/sh
+
+# execute this script, if shared objects are missing
+
+export LD_LIBRARY_PATH=/usr/local/lib # directories of used shared libraries, at least libpolynomial.so
