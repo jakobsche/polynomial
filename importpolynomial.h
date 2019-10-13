@@ -7,7 +7,7 @@ gcc -g -wall -o pntest pntest.c libpolynomial.so
 
 */
 
-type *void TPolynomial;
+typedef *void TPolynomial;
 
 #ifdef macOS
 
