@@ -9,8 +9,6 @@ gcc -g -wall -o pntest pntest.c libpolynomial.so
 
 type *void TPolynomial;
 
-//#define macos // use this, if you have problems on macOS
-
 #ifdef macOS
 
 /*Creates a new polynomial in memory and points to it.
