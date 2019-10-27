@@ -1,6 +1,6 @@
-// testing the library by calculating some data about an example polynomial
+// testing the library polynomial by calculating some data about an example polynomial
 
-// #define macos // if the functions are not found on macOS
+// #define macos
 #include "../importpolynomial.h"
 #include <stdio.h>
 
@@ -48,6 +48,7 @@ int main()
 
     DestroyPolynomial(&P1);
     DestroyPolynomial(&P2);
-    printf("%p, %p\n", P1, P2);
+    printf("After destruction: %p, %p\n", P1, P2);
+
     return 0;
 }

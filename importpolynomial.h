@@ -20,7 +20,7 @@ TPolynomial _CreateCopy(TPolynomial P);
 
 /*Destroys a polynomial by freeing its memory.
 P is set to nil. Call this after the last access to a polynomial!*/
-void _DestroyPolynomial(TPolynomial P);
+void _DestroyPolynomial(TPolynomial *P);
 
 /*Returns the degree of the polynomial P*/
 int _GetDegree(TPolynomial P);
@@ -44,10 +44,24 @@ pointer. All other functions of this library can be applied to a derivation poin
 like for every other polynomial pointer.*/
 TPolynomial _GetDerivation(TPolynomial P; int n);
 
-TPolynomial GetSecant(TPolynomial P; double a, b);
+TPolynomial _GetSecant(TPolynomial P; double a, b);
 
 /*points to a polynomial, that describes the tangent of P at the position, x0.*/
 TPolynomial _GetTangent(TPolynomial P; double x0);
+
+// Translation of function names
+
+TPolynomial (*CreatePolynomial) ()                                        = &_CreatePolynomial;
+TPolynomial (*CreateCopy) (TPolynomial P)                                 = &_CreateCopy;
+void        (*DestroyPolynomial) (TPolynomial *P)                         = &_DestroyPolynomial;
+int         (*GetDegree) (TPolynomial P)                                  = &_GetDegree;
+void        (*SetDegree) (TPolynomial P; int AValue)                      = &_SetDegree;
+double      (*GetCoefficient) (TPolynomial P; int AnIndex)                = &_GetCoefficient;
+void        (*SetCoefficient) (TPolynomial P; int AnIndex; double AValue) = &_SetCoefficient;
+double      (*GetPolynomialValue) (TPolynomial P; double x)               = &_GetPolynomialValue;
+TPolynomial (*GetDerivation) (TPolynomial P; int n)                       = &_GetDerivation;
+TPolynomial (*GetSecant) (TPolynomial P; double a, b)                     = &_GetSecant;
+TPolynomial (*GetTangent) (TPolynomial P; double x0)                      = &_GetTangent;
 
 #else
 
