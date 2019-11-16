@@ -1,0 +1,103 @@
+object Form1: TForm1
+  Left = 741
+  Height = 421
+  Top = 233
+  Width = 530
+  Caption = 'Bibliothekstest'
+  ClientHeight = 421
+  ClientWidth = 530
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDefault
+  LCLVersion = '2.0.4.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 421
+    Top = 0
+    Width = 530
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Importierte &Funktionen'
+      ClientHeight = 315
+      ClientWidth = 462
+      object Memo1: TMemo
+        Left = 0
+        Height = 315
+        Top = 0
+        Width = 462
+        Align = alClient
+        Font.Name = 'Courier'
+        Lines.Strings = (
+          'Memo1'
+        )
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Kurvendiskussion'
+      ClientHeight = 382
+      ClientWidth = 524
+      object Chart: TChart
+        Left = 0
+        Height = 382
+        Top = 0
+        Width = 524
+        AxisList = <        
+          item
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+            Title.LabelBrush.Style = bsClear
+          end        
+          item
+            Alignment = calBottom
+            Marks.LabelFont.Orientation = 900
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelBrush.Style = bsClear
+          end>
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Legend.Visible = True
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'Kurvendiskussion'
+        )
+        Align = alClient
+        object PolynomialSeries: TLineSeries
+          Title = 'Polynom'
+          AxisIndexX = 1
+          AxisIndexY = 0
+          ColorEach = ceLineBefore
+          LinePen.Width = 2
+        end
+        object DerivationSeries: TLineSeries
+          Title = 'Ableitung'
+          AxisIndexX = 1
+          AxisIndexY = 0
+          LinePen.Color = clGreen
+          LinePen.Width = 2
+        end
+        object TangentSeries: TLineSeries
+          Title = 'Tangente'
+          LinePen.Color = clRed
+          LinePen.Width = 2
+          OnCustomDrawPointer = TangentSeriesCustomDrawPointer
+        end
+        object SecantSeries: TLineSeries
+          Title = 'Sekante'
+          AxisIndexX = 1
+          AxisIndexY = 0
+          LinePen.Color = clNavy
+          LinePen.Width = 2
+        end
+      end
+    end
+  end
+end

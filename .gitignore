@@ -2,14 +2,12 @@
 backup
 functions.pas
 lib
-pntest
 polynomial.lpi
 polynomial.lpr
 polynomial.lps
 polynomial.res
 .DS_Store
-*/.DS_Store
-.svn
 importpolynomial.h
 *.bak
 .directory
+c-example
